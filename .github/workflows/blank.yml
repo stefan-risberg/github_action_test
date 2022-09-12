@@ -50,6 +50,8 @@ jobs:
           source: "deploy.tar"
           target: "/home/github_action"
           proxy_host: ${{ secrets.HTTPS_PROXY }}
+          proxy_username: ""
+          proxy_key: ""
 
       # Runs a single command using the runners shell
       # - name: Run a one-line script

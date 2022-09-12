@@ -49,6 +49,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: "deploy.tar"
           target: "/home/github_action"
+          proxy_host: https://proxy-se-uan.ddc.teliasonera.net:8080
 
       # Runs a single command using the runners shell
       # - name: Run a one-line script

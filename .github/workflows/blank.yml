@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir ../build
           cp -TR . ../build
-          tar -cvf depoly.tar ../build/
+          tar -cvf deploy.tar ../build/
           pwd
           ls
 

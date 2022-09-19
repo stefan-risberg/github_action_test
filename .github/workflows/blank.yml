@@ -40,6 +40,8 @@ jobs:
           mkdir ../build
           cp -TR . ../build
           tar -cvf depoly.tar ../build/
+          pwd
+          ls
 
       - name: Test upload via SSH
         uses: nicklasfrahm/scp-action@main
@@ -49,7 +51,7 @@ jobs:
           fingerprint: ${{ secrets.SSH_TARGET_FINGERPRINT }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          source: "deploy.tar"
+          source: "./deploy.tar"
           target: "/home/github_action"
 
       # Runs a single command using the runners shell

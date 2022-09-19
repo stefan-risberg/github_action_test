@@ -31,9 +31,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-      - name: Ping server
-        run: |
-          ping -c 3 ${{ secrets.HOST }}
+      # - name: Ping server
+      #   run: |
+      #     ping -c 3 ${{ secrets.HOST }}
 
       - name: Pack repository
         run: |
@@ -42,7 +42,7 @@ jobs:
           tar -cvf depoly.tar ../build/
 
       - name: Test upload via SSH
-        uses: telia-actions/scp-action@main
+        uses: nicklasfrahm/scp-action@main
         with:
           direction: upload
           host: ${{ secrets.HOST }}

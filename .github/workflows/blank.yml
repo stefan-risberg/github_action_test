@@ -31,6 +31,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+      - name: Ping server
+        run: |
+          ping -c 3 fiskhamn.se
 
       - name: Pack repository
         run: |
@@ -48,6 +51,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: "deploy.tar"
           target: "/home/github_action"
+          proxy_host: "https://proxy-se.ddc.teliasonera.net:8080"
 
       # Runs a single command using the runners shell
       # - name: Run a one-line script
